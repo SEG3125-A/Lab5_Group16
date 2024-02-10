@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Barber King</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#services"><i class="fas fa-cut"></i> Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#staff"><i class="fas fa-user-tie"></i> Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#payment"><i class="fas fa-credit-card"></i> Payment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <header class="text-center mt-4">
+        <img src="images/king.jpg" alt="Barber King Logo" class="img-fluid mb-3">
+        <h1>Barber King</h1>
+        <p>Address: 123 Barber Street, Ottawa</p>
+        <p>Our Staff:</p>
+        <li>John Doe - Senior Barber</li>
+        <li>Jane Smith - Stylist</li>
+        <li>Mike Johnson - Hair Color Specialist</li>
+    </header>
+
+    <section id="services" class="mt-4">
+        <h2>Services</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="images/haircut-short.jpg" class="card-img-top" alt="Short Haircut">
+                    <div class="card-body">
+                        <h5 class="card-title">Short Haircut</h5>
+                        <p class="card-text">Price: $20</p>
+                        <button class="btn btn-primary book-btn" data-toggle="modal" data-target="#bookingModal"
+                                data-service="Short Haircut" data-barber="John Doe" data-toggle="tooltip"
+                                data-placement="top" title="Select Service">Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="images/haircut-medium.jpg" class="card-img-top" alt="Medium Haircut">
+                    <div class="card-body">
+                        <h5 class="card-title">Medium Haircut</h5>
+                        <p class="card-text">Price: $30</p>
+                        <button class="btn btn-primary book-btn" data-toggle="modal" data-target="#bookingModal"
+                                data-service="Medium Haircut" data-barber="Jane Smith" data-toggle="tooltip"
+                                data-placement="top" title="Select Service">Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="images/haircut-long.jpg" class="card-img-top" alt="Long Haircut">
+                    <div class="card-body">
+                        <h5 class="card-title">Long Haircut</h5>
+                        <p class="card-text">Price: $40</p>
+                        <button class="btn btn-primary book-btn" data-toggle="modal" data-target="#bookingModal"
+                                data-service="Long Haircut" data-barber="Mike Johnson" data-toggle="tooltip"
+                                data-placement="top" title="Select Service">Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="staff" class="mt-4">
+        <h2>Staff</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/John_Doe.jpg" alt="john doe">
+                        <div class="overlay intro-text">
+                            <h2>Senior Barber</h2>
+                            <p>Meet John Doe</p>
+                            <p>our Senior Barber with over 10 years of experience at King's Barber Shop.</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <button class="btn btn-primary book-btn" data-toggle="modal" data-target="#bookingModal"
+                                data-service="" data-barber="John Doe" data-toggle="tooltip" data-placement="top"
+                                title="Select Service">Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/Jane_Smith.jpg" alt="john doe">
+                        <div class="overlay intro-text">
+                            <h2>Stylist</h2>
+                            <p>Meet Jane Smith,</p>
+                            <p>our Stylist with over 10 years of experience at King's Barber Shop.</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Jane Smith</h5>
+                        <button class="btn btn-primary book-btn" data-toggle="modal" data-target="#bookingModal"
+                                data-service="" data-barber="Jane Smith" data-toggle="tooltip" data-placement="top"
+                                title="Select Service">Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/Mike_Johnson%20(2).jpg" alt="Jane Smith">
+                        <div class="overlay intro-text">
+                            <h2>Hair Color Specialist</h2>
+                            <p>Meet Mike Johnson,</p>
+                            <p>our Hair Color Specialist with over 10 years of experience at King's Barber Shop.</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mike Johnson</h5>
+                        <button class="btn btn-primary book-btn" data-toggle="modal" data-target="#bookingModal"
+                                data-service="" data-barber="Mike Johnson" data-toggle="tooltip" data-placement="top"
+                                title="Select Service">Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div class="modal" id="bookingModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Book Your Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="barber">Barber</label>
+                        <select class="form-control" id="barber">
+                            <option value="John Doe">John Doe - Senior Barber</option>
+                            <option value="Jane Smith">Jane Smith - Stylist</option>
+                            <option value="Mike Johnson">Mike Johnson - Hair Color Specialist</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="serviceDropdownGroup" style="display:none;">
+                        <label for="serviceDropdown">Service</label>
+                        <select class="form-control" id="serviceDropdown">
+                            <option value="Short Haircut">Short Haircut</option>
+                            <option value="Medium Haircut">Medium Haircut</option>
+                            <option value="Long Haircut">Long Haircut</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="serviceNameInputGroup">
+                        <label for="serviceName">Service</label>
+                        <input type="text" class="form-control" id="serviceName" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingDate">Date</label>
+                        <input type="date" class="form-control" id="bookingDate" oninput="validateDate()"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingTime">Time</label>
+                        <input type="time" class="form-control" id="bookingTime" oninput="validateTime()"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userName">Your Name</label>
+                        <input type="text" class="form-control" id="userName" oninput="validateName()"
+                               pattern="^[a-z A-Z]+$" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Your Email</label>
+                        <input type="email" class="form-control" id="userEmail" oninput="validateEmail()"
+                               pattern="^([\w\.])*(\w@)(\w)*((.com)|(.ca)|(.co)|(.net)|(.org)|(.gov)|(.edu))$"
+                               required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Book Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="payment" class="py-5">
+    <div class="container">
+        <h2>Payment</h2>
+        <!-- Payment form goes here -->
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry">Expiry Date</label>
+                <input type="text" class="form-control" id="expiry" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" class="form-control" id="cvv" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Payment</button>
+        </form>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    $('[data-target="#bookingModal"]').on('click', function () {
+        var serviceName = $(this).data('service');
+        $('#serviceName').val(serviceName);
+        validDate() //sets valid dates to select
+        validTime() //sets valid time inputs
+    });
+
+    $('.book-btn').on('click', function () {
+        var barberName = $(this).data('barber');
+        $('#barber').val(barberName);
+        $('#barber option').prop('disabled', false); // Enable all options
+        //$('#barber option[value="' + barberName + '"]').prop('disabled', true); // Disable selected barber
+        $('#barber').prop('readonly', true); // Set the barber input field to readonly
+
+        // Make other barber inputs readonly
+        $('#serviceName').val($(this).data('service'));
+        $('#serviceName').prop('readonly', true);
+    });
+
+</script>
+
+<footer style="text-align: center;">
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <li style="font-weight: bold; font-size: 18px;">Hours of Operation:</li>
+        <li>Monday: 09:30 AM - 7:30 PM</li>
+        <li>Tuesday: 09:30 AM - 7:30 PM</li>
+        <li>Wednesday: 09:30 AM - 7:30 PM</li>
+        <li>Thursday: 09:30 AM - 7:30 PM</li>
+        <li>Friday: 09:30 AM - 7:30 PM</li>
+        <li>Saturday: 09:30 AM - 7:30 PM</li>
+        <li>Sunday: 09:30 AM - 7:30 PM</li>
+    </ul>
+    <p>Website designed by Mohamad Massalkhi, Hasan Jaber, Aiden Garrett, and Georgio Monsef &copy; Barber
+        King™</p>
+</footer>
+</body>
+
+</html>
