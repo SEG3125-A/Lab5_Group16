@@ -140,3 +140,14 @@ li.closed {
     color: #777;
     font-style: italic;
 }
+
+#clock {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 999;
+}
+
+
