@@ -5,6 +5,14 @@ let openMinute = parseInt(openingTime.split(":")[1])
 let closingHour = parseInt(closingTime.split(":")[0])
 let closingMinute = parseInt(closingTime.split(":")[1])
 
+
+let barberHours = new Map();
+
+barberHours.set("John Doe", [1, 5])
+barberHours.set("Jane Smith", [2])
+barberHours.set("Mike Johnson", [3,4])
+
+
 $("#cardNumber").keyup(function() {
 
     let cardNum = $("#cardNumber").val()
@@ -55,18 +63,36 @@ $("#payBtn").click(function () {
 
 
 $(document).ready(function () {
-
-
-
     $('.datepicker').datepicker({
-        format: 'mm-dd-yyyy',
-        autoclose: true,
-        todayHighlight: true,
-        datesDisabled: ["02-20-2024"]
+        formatDate: "yyyy-mm-dd",
+        minDate: new Date(),
+        beforeShowDay: function (date) {
+            let response = []
+            let closedDays =  barberHours.get($("#barber").val())
+
+            //closed weekend
+            if (date.getDay() === 0 || date.getDay() === 6) {
+                response[0] = false
+                response[1] = ""
+                response[2] = "closed on weekends"
+            } else {
+                response[0] = true
+                response[1] = ""
+                response[2] = "valid date!"
+            }
+
+            for (let i = 0; i < closedDays.length; i++) {
+                if (date.getDay() === closedDays[i]) {
+                    response[0] = false
+                    response[1] = ""
+                    response[2] = "Your selected barber is closed today!"
+                }
+            }
+            return response
+        }
     });
-
-
 })
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
