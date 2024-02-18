@@ -194,7 +194,7 @@
 
                     <div class="form-group">
                         <label for="bookingDate">Date</label>
-                        <input type="date" class="form-control" id="bookingDate" oninput="validateDate()"
+                        <input type="date" class="form-control datepicker" id="bookingDate" oninput="validateDate()"
                                required>
                     </div>
                     <div class="form-group">
@@ -229,17 +229,18 @@
         <form id="paymentForm">
             <div class="form-group">
                 <label for="cardNumber">Card Number</label>
-                <input type="text" class="form-control" id="cardNumber" pattern="^\d{16}$">
+                <input type="text" class="form-control" id="cardNumber" maxlength="19" placeholder="credit card number" pattern="^(\d{4}-){3}(\d{4})$" required>
             </div>
             <div class="form-group">
                 <label for="expiry">Expiry Date</label>
-                <input type="text" class="form-control" id="expiry" required>
+                <!--expiry date is between 24 and 39-->
+                <input type="text" class="form-control" id="expiry" placeholder="MM/YY" pattern="^([1-9]|10|11|12)\/(((3)[0-9])|((2)[4-9]))$" required>
             </div>
             <div class="form-group">
                 <label for="cvv">CVV</label>
-                <input type="text" class="form-control" id="cvv" required>
+                <input type="text" class="form-control" id="cvv" maxlength="3" placeholder="3 digit cvv" pattern="^\d{3}$" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit Payment</button>
+            <button type="submit" class="btn btn-primary" id="payBtn">Submit Payment</button>
         </form>
     </div>
 </section>
@@ -253,6 +254,8 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="app.js"></script>
+
+
 
 <script>
     $(function () {

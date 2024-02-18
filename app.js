@@ -5,6 +5,69 @@ let openMinute = parseInt(openingTime.split(":")[1])
 let closingHour = parseInt(closingTime.split(":")[0])
 let closingMinute = parseInt(closingTime.split(":")[1])
 
+$("#cardNumber").keyup(function() {
+
+    let cardNum = $("#cardNumber").val()
+    let formated = ""
+
+    if (cardNum.length === 4 && cardNum[3] !== '-') {
+        cardNum = cardNum + "-"
+    }
+
+    if (cardNum.length === 9 && cardNum[8] !== '-') {
+        cardNum = cardNum + "-"
+    }
+
+    if (cardNum.length === 14 && cardNum[13] !== '-') {
+        cardNum = cardNum + "-"
+    }
+
+    $("#cardNumber").val(cardNum)
+
+});
+
+$("#expiry").keyup(function () {
+    let expiry = $("#expiry").val()
+    let formated = expiry.replace("/", "")
+
+
+    if (expiry.length <= 2) {
+        formated = expiry
+
+        if (parseInt(expiry) > 12) {
+            alert("Month must be <= 12")
+        }
+
+    } else {
+        formated = formated.slice(0,2) + "/" + formated.slice(2,4)
+    }
+
+    $("#expiry").val(formated)
+})
+
+$("#cvv").keyup(function (){
+
+})
+
+$("#payBtn").click(function () {
+    $("#paymentForm").attr("class", "was-validated")
+})
+
+
+$(document).ready(function () {
+
+
+
+    $('.datepicker').datepicker({
+        format: 'mm-dd-yyyy',
+        autoclose: true,
+        todayHighlight: true,
+        datesDisabled: ["02-20-2024"]
+    });
+
+
+})
+
 document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.btn-primary[data-target="#bookingModal"]').forEach(function (button) {
