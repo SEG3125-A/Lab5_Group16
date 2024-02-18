@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+
 </head>
 
 <body>
+    }
+</style>
+<div id="clock">Clock</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">Barber King</a>
@@ -229,7 +234,7 @@
         <form id="paymentForm">
             <div class="form-group">
                 <label for="cardNumber">Card Number</label>
-                <input type="text" class="form-control" id="cardNumber" maxlength="19" placeholder="credit card number" pattern="^(\d{4}-){3}(\d{4})$" required>
+                <input type="text" class="form-control" id="cardNumber" maxlength="19" placeholder="credit card number (xxxx-xxxx-xxxx-xxxx)" pattern="^(\d{4}-){3}(\d{4})$" required>
             </div>
             <div class="form-group">
                 <label for="expiry">Expiry Date</label>
@@ -267,21 +272,20 @@
     $('[data-target="#bookingModal"]').on('click', function () {
         var serviceName = $(this).data('service');
         $('#serviceName').val(serviceName);
-        validDate() //sets valid dates to select
-        validTime() //sets valid time inputs
+        validDate()
+        validTime()
     });
 
     $('.book-btn').on('click', function () {
         var barberName = $(this).data('barber');
         $('#barber').val(barberName);
-        $('#barber option').prop('disabled', false); // Enable all options
-        //$('#barber option[value="' + barberName + '"]').prop('disabled', true); // Disable selected barber
-        $('#barber').prop('readonly', true); // Set the barber input field to readonly
+        $('#barber option').prop('disabled', false);
+        $('#barber').prop('readonly', true);
 
-        // Make other barber inputs readonly
         $('#serviceName').val($(this).data('service'));
         $('#serviceName').prop('readonly', true);
     });
+
 
 </script>
 
