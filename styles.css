@@ -156,4 +156,8 @@ li.closed {
     background-repeat: no-repeat;
 }
 
-
+#cardNumber {
+    background-image: url("images/credit-card.svg");
+    background-position: 97%;
+    background-repeat: no-repeat;
+}
