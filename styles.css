@@ -150,4 +150,10 @@ li.closed {
     z-index: 999;
 }
 
+#bookingDate {
+    background-image: url("images/calendar-date.svg");
+    background-position: 97%;
+    background-repeat: no-repeat;
+}
+
 

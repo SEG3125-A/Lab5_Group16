@@ -66,10 +66,10 @@ $(document).ready(function () {
     $('.datepicker').datepicker({
         formatDate: "yyyy-mm-dd",
         minDate: new Date(),
+        buttonImage: "images/calendar-date.png",
         beforeShowDay: function (date) {
             let response = []
             let closedDays =  barberHours.get($("#barber").val())
-
             //closed weekend
             if (date.getDay() === 0 || date.getDay() === 6) {
                 response[0] = false
